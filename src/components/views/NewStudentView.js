@@ -52,12 +52,12 @@ const NewStudentView = (props) => {
           </div>
           <form style={{textAlign: 'center'}} onSubmit={(e) => handleSubmit(e)}>
             <label style= {{color:'#11153e', fontWeight: 'bold'}}>First Name: </label>
-            <input type="text" name="firstname" onChange ={(e) => handleChange(e)} />
+            <input type="text" name="firstname" required onChange ={(e) => handleChange(e)} />
             <br/>
             <br/>
 
             <label style={{color:'#11153e', fontWeight: 'bold'}}>Last Name: </label>
-            <input type="text" name="lastname" onChange={(e) => handleChange(e)} />
+            <input type="text" name="lastname" required onChange={(e) => handleChange(e)} />
             <br/>
             <br/>
 
@@ -66,6 +66,20 @@ const NewStudentView = (props) => {
             <br/>
             <br/>
 
+            <label style={{color:'#11153e', fontWeight: 'bold'}}>Email: </label>
+            <input type="text" name="email" required onChange={(e) => handleChange(e)} />
+            <br/>
+            <br/>
+
+            <label style={{color:'#11153e', fontWeight: 'bold'}}>Image: </label>
+            <input type="text" name="image" onChange={(e) => handleChange(e)} />
+            <br/>
+            <br/>
+
+            <label style={{color:'#11153e', fontWeight: 'bold'}}>GPA: </label>
+            <input type="number" name="gpa" min={0.00} max={4.00} step={0.01} onChange={(e) => handleChange(e)} />
+            <br/>
+            <br/>
             <Button variant="contained" color="primary" type="submit">
               Submit
             </Button>

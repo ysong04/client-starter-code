@@ -22,12 +22,13 @@ const useStyles = makeStyles(theme => ({
     flexGrow: 1,
     textAlign: 'left',
     fontType: 'bold',
-    fontFamily: 'sans-serif', 
+    fontFamily: 'Verdana sans-serif', 
     fontSize: '35px', 
-    color: 'darkblue'
+    color: 'lightblue',
+    
   },
   appBar:{
-    backgroundColor: '#fcb6bb',
+    backgroundColor: '#000',
     shadows: ['none'],
   },
   greeting:{
@@ -55,19 +56,19 @@ const Header = () => {
           </Typography>
 
           <Link className={classes.links} to={'/'} >
-            <Button variant="contained" color="primary" style={{marginRight: '10px'}}>
+            <Button variant="contained" color="light" style={{marginRight: '10px'}}>
               Home
             </Button>
           </Link>
 
           <Link className={classes.links} to={'/campuses'} >
-            <Button variant="contained" color="primary" style={{marginRight: '10px'}}>
+            <Button variant="contained" color="light" style={{marginRight: '10px'}}>
               All Campuses
             </Button>
           </Link>
 
           <Link className={classes.links} to={'/students'} >
-            <Button variant="contained" color="primary">
+            <Button variant="contained" color="light">
               All Students
             </Button>
           </Link>
