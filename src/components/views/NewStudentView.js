@@ -72,7 +72,7 @@ const NewStudentView = (props) => {
             <br/>
 
             <label style={{color:'#11153e', fontWeight: 'bold'}}>Image: </label>
-            <input type="text" defaultValue = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLWBkK3Qr2ItCayAtt6OyznURWjIYHUHs3yw&usqp=CAU" name="image" onChange={(e) => handleChange(e)} />
+            <input type="text" name="image" onChange={(e) => handleChange(e)} />
             <br/>
             <br/>
 

@@ -21,7 +21,7 @@ class NewStudentContainer extends Component {
       firstname: "", 
       lastname: "",
       email: "",
-      image: "",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLWBkK3Qr2ItCayAtt6OyznURWjIYHUHs3yw&usqp=CAU",
       gpa: 0.00,
       campusId: null, 
       redirect: false, 

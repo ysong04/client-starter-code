@@ -35,7 +35,7 @@ class NewCampusContainer extends React.Component {
             name: this.state.name,
             address: this.state.address,
             description: this.state.description,
-            imageUrl: this.state.imageUrl
+            imageUrl: "https://scontent-lga3-1.xx.fbcdn.net/v/t1.6435-9/54462380_2313175188727790_4347036481609531392_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=e3f864&_nc_ohc=W2Ttb9yfMHcAX8Pkf11&_nc_ht=scontent-lga3-1.xx&oh=00_AfA5qt1Psqnh47ORzEGNVy7MJfRwWu5MRWwG4lTqwWlfmg&oe=63C89672"
         };
         
         // Add new student in back-end database
