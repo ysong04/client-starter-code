@@ -17,6 +17,7 @@ const StudentView = (props) => {
   return (
     <div>
       <div class="card" >
+        {student.image && <img src={student.image} style={{ width: '200px', height: '200px' }} alt="" />}
         <div class="title">
           <h1 onClick={() => history.push(`/student/${student.id}`)} style={{ cursor: "pointer" }}>{student.firstname + " " + student.lastname}</h1>
           <h2>{student?.email}</h2>
