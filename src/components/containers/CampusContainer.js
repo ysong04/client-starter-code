@@ -8,23 +8,50 @@ If needed, it also defines the component's "connect" function.
 import Header from './Header';
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { fetchCampusThunk } from "../../store/thunks";
+import {  fetchCampusThunk,editStudentThunk, fetchStudentThunk, deleteStudentThunk } from "../../store/thunks";
 
 import { CampusView } from "../views";
+import { editStudent, fetchStudent, deleteStudent } from '../../store/actions/actionCreators';
 
 class CampusContainer extends Component {
   // Get the specific campus data from back-end database
+  constructor(props){ super(props)
+    this.state = {
+      kickStudent: false
+    };
+  }
   componentDidMount() {
     // Get campus ID from URL (API link)
     this.props.fetchCampus(this.props.match.params.id);
   }
+
+  kickStudent = studentId => {
+    console.log(typeof this.props.campus.students);
+
+    // let student = fetchStudent(studentId)
+    // this.props.editStudent(student)
+    for(let i = 0; i < this.props.campus.students.length; ++i){
+      if(studentId === this.props.campus.students[i].id){
+        this.props.campus.students[i].campusId = null;
+        this.props.editStudent(this.props.campus.students[i]); 
+        this.props.campus.students.splice(i, 1);
+        break;
+      }
+    }
+
+    // this.props.campus.students.remove(student)
+
+      console.log("Croissant")
+    this.setState({kickStudent: true});}
 
   // Render a Campus view by passing campus data as props to the corresponding View component
   render() {
     return (
       <div>
         <Header />
-        <CampusView campus={this.props.campus} />
+        <CampusView campus={this.props.campus} 
+        kickStudent={this.kickStudent}
+        />
       </div>
     );
   }
@@ -43,6 +70,9 @@ const mapState = (state) => {
 const mapDispatch = (dispatch) => {
   return {
     fetchCampus: (id) => dispatch(fetchCampusThunk(id)),
+    editStudent: (student) => dispatch(editStudentThunk(student)),
+    fetchStudent: (id) => dispatch(fetchStudentThunk(id)),
+    deleteStudent: (id) => dispatch(deleteStudentThunk(id))
   };
 };
 

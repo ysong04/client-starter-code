@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 
 // Take in props data to construct the component
 const CampusView = (props) => {
-  const { campus } = props;
+  const { campus, kickStudent } = props;
 
   // Render a single Campus view with list of its students
   return (
@@ -28,15 +28,22 @@ const CampusView = (props) => {
                 <Link to={`/student/${student.id}`}>
                   <h2>{name}</h2>
                 </Link>
+
+
+                <button onClick={() => kickStudent(student.id)}>
+                  Unenroll
+                </button>
+
               </div>
+
+           
             );
           })}
-          <div style={{ display: 'flex', justifyContent: 'center', textAlign: 'center', flexDirection: 'column', alignItems: 'center' }}>
-            <Link to={`/students`}>
-              <button className="bg-green button">Add new/existing students</button>
-            </Link>
-          </div>
-          
+            <div style={{ display: 'flex', justifyContent: 'center', textAlign: 'center', flexDirection: 'column', alignItems: 'center' }}>
+              <Link to={`/students`}>
+                <button className="bg-green button">Add current/new students</button>
+              </Link>
+            </div>
         </div>
       </div>
     </div>

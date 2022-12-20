@@ -86,7 +86,7 @@ class EditStudentContainer extends React.Component {
                     <br />
                     <br />
 
-                    <label style={{ color: '#11153e', fontWeight: 'bold' }}>ID: </label>
+                    <label style={{ color: '#11153e', fontWeight: 'bold' }}>CampusID: </label>
                     <input type="text" required value={this.state.campusId} name="campusId" onChange={(e) => this.handleChange(e)} />
                     <br />
                     <br />
