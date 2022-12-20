@@ -14,6 +14,7 @@ class EditStudentContainer extends React.Component {
         super(props);
         this.state = {
             id: "",
+            campusId: "",
             firstname: "",
             lastname: "",
             image: "",
@@ -37,6 +38,7 @@ class EditStudentContainer extends React.Component {
         console.log(response)
         if (response) {
             this.setState({
+                campusId: "",
                 firstname: "",
                 lastname: "",
                 image: "",
@@ -53,9 +55,10 @@ class EditStudentContainer extends React.Component {
         });
     }
     componentDidMount() {
-        let { firstname, lastname, image, gpa, email,id } = localStorage.getItem("CurrentStudent") ? JSON.parse(localStorage.getItem("CurrentStudent")) : { firstname: "", lastname: "", image: "", gpa: "", email: "", id:""}
+        let { firstname, lastname, image, gpa, email,id, campusId } = localStorage.getItem("CurrentStudent") ? JSON.parse(localStorage.getItem("CurrentStudent")) : { firstname: "", lastname: "", image: "", gpa: "", email: "", id:"", campusId:""}
         this.setState({
             ...this.state,
+            campusId,
             id,
             firstname,
             lastname,
@@ -80,6 +83,11 @@ class EditStudentContainer extends React.Component {
 
                     <label style={{ color: '#11153e', fontWeight: 'bold' }}>LastName: </label>
                     <input type="text" required value={this.state.lastname} name="lastname" onChange={(e) => this.handleChange(e)} />
+                    <br />
+                    <br />
+
+                    <label style={{ color: '#11153e', fontWeight: 'bold' }}>ID: </label>
+                    <input type="text" required value={this.state.campusId} name="campusId" onChange={(e) => this.handleChange(e)} />
                     <br />
                     <br />
 

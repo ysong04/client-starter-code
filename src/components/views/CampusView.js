@@ -31,6 +31,12 @@ const CampusView = (props) => {
               </div>
             );
           })}
+          <div style={{ display: 'flex', justifyContent: 'center', textAlign: 'center', flexDirection: 'column', alignItems: 'center' }}>
+            <Link to={`/students`}>
+              <button className="bg-green button">Add new/existing students</button>
+            </Link>
+          </div>
+          
         </div>
       </div>
     </div>
